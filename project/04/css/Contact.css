@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+.main{height:720px;}
+.main-inner{width:1140px;margin:0 auto;}
+.main-inner .box{height:253px;}
+.main-inner .box .content{margin:57px 0 32px;text-align:center;}
+.main-inner .content h2{height:96px;line-height:96px;font-size:42px;color:#000000;font-family:Arial;}
+.main-inner .content p{height:23px;line-height:23px;color:#b3b3b3;font:14px/23px Aril;width:922px;margin:0 auto;}
+form{margin:0 auto;width:1140px;margin-bottom:25px;}
+input{width:370px;height:48px;background:#ededed;border:1px solid #dcdbe0;border-radius:2px;}
+textarea{resize:none;width:1140px;height:250px;background:#ededed;border:1px solid #dcdbe0;border-radius:2px;color:#b3b3b3;}
+.main a{height:57px;line-height:57px;border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.5) inset; display:block;padding:0 22px;
+background-color:#ed5843;color:#fff;font-weight:bolder;font-size:16px;font-family:Arial Bold;float:right;margin:39px 44px 0 0;}

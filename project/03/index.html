@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style>
+        body{font-family:arial}
+        a:hover{text-decoration:none}
+        a:focus{text-decoration:none}
+        .header_top{width:100%;background:#1f262e}
+        .header_text,.header_right{height:36px;line-height:36px;color:#95989d;font-size:14px;}
+        .header_right a{margin-left:20px;float:right;color:#95989d;}
+        .header_bottom{width:100%;background:#282f37;height:81px;border-top:1px solid #3c434b}
+        .header_bottom .h_botLeft img{margin-top:7px;}
+        .header_bottom .h_botRight div{padding:0;margin-top:5px;}
+        .header_bottom .h_botRight div a{color:#fff;font:bold normal 16px/76px arial;display:block;text-align:center;border-top:4px solid #282f37}
+        .header_bottom .h_botRight div:first-child a{border-top:4px solid #f24a4a}
+        .banner{background: #f14949;padding-top:60px;height:600px;}
+        .banner .container{width:1254px}
+        .banner_right{margin:115px 0 0 0px;}
+        .banner_right h2,.banner_right p{color:#fff;}
+        .banner_right h2{font-size:40px;}
+        .section1{text-align:center;padding:49px 0 82px 0;}
+        .section1 h2{color:#f14949;height:100px;line-height:100px;}
+        .section1 p{height:24px;line-height:24px;}
+        .section2 .row{margin-bottom:45px;}
+        /*.section2 .row div .b_right{float:right}*/
+        .section2 .row div button{border:1px solid #f14949;}
+        .section2 .row div button:first-child{background:#f14949}
+        .section2 div .thumbnail{background:#ebebeb;color:#fff}
+
+        #section2_bot div:first-child  .thumbnail{background:#f14949;}
+        #section2_bot div:first-child  .thumbnail h3{color:#fff}
+        #section2_bot div:first-child  .thumbnail p{color:#fff}
+
+        .section3{height:375px;background:#909090 url(images/图层%20110.png) no-repeat center top/cover;background-blend-mode:multiply;}
+        .section3 .container{text-align:center}
+        .section3 h2,.section3 p{color:#fff;}
+        .section3 h2{margin-top:75px;line-height:40px;height:40px;font-weight:bold;font-size:40px}
+        .section3 p{margin-top:25px;height:18px;line-height:18px;font-size:20px;}
+        .section3 a{margin-top:65px;display:block;font-size:20px;padding:8px 10px;opacity:1;border:1px solid #fff;color:#fff;border-radius:4px }
+        .section4{padding:85px 0 80px 0}
+        .section4 span{font-size:40px;color:#f14946}
+        .section4 p{height:20px;line-height:20px;font-size:18px;margin-left:20px;}
+        .section4 p:first-child{color:#f14946}
+        .section5 p{font-size:28px;}
+        .section6 .col-sm-8 .row{margin-bottom: 50px;}
+        .section6 .col-sm-4 p:first-child{background:#f14949;color:#fff;height:40px;line-height:40px;border-radius:4px;}
+        .section6 .col-sm-4 p:nth-child(2){line-height:30px;}
+        .section6 .col-sm-4 div{background:#d3d3d3;color:#4f4f4f;height:40px;line-height:40px;border-radius:4px;margin-bottom:12px;}
+        .section7{height:520px;background:#f14949;}
+        .section7 .row{margin-top:40px;text-align:center}
+        .section7 .row h2{color:#fff;}
+        .section7 .row p{color:#fff;line-height:20px}
+        .section7 .row:nth-child(2) p{margin-top:20px;font-size:30px;}
+        .section8{height:322px;background:#282f37;}
+        .section8 .row{margin:40px 0 0 0;text-align:center;}
+        .section8 .row p{color:#fff;font-size:20px;}
+
+
+    </style>
+</head>
+<body>
+<div class="header_top">
+    <div class="container">
+            <div class="row ">
+                <div class="header-left col-sm-6">
+                    <div class="col-sm-5 header_text">
+                        <span class="glyphicon glyphicon-time"></span>Sunday,February 16,2017
+                    </div>
+                    <div class="col-sm-3 header_text">
+                         <span class="glyphicon glyphicon-earphone"></span>+1234567890
+                    </div>
+                    <div class="col-sm-4 header_text">
+                       <span class="glyphicon glyphicon-envelope"></span>yourmail@gmail.com
+                    </div>
+                </div>
+                <div class="header_right col-sm-3 col-sm-offset-3">
+                    <a href="#"><span class="glyphicon glyphicon-wrench"></span></a>
+                    <a href="#"><span class="glyphicon glyphicon-phone"></span></a>
+                    <a href="#"><span class="glyphicon glyphicon-map-marker"></span></a>
+                    <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="header_bottom">
+    <div class="container">
+        <div class="h_botLeft col-sm-4">
+            <a href="#"><img src="images/logo.png"></a>
+        </div>
+        <div class="h_botRight col-sm-7 col-sm-offset-1">
+            <div class="col-sm-2"><a href="#">Home </a></div>
+            <div class="col-sm-2"><a href="#">About </a></div>
+            <div class="col-sm-2"><a href="#">Portfolios </a></div>
+            <div class="col-sm-2"><a href="#">Features </a></div>
+            <div class="col-sm-2"><a href="#">Our Products </a></div>
+            <div class="col-sm-2"><a href="#">Contact Us </a></div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="banner_left col-sm-5"><img src="images/img.png" ></div>
+            <div class="banner_right col-sm-7">
+                <h2 class="text-uppercase col-sm-offset-2">An Amazing Responsive wordpress theme</h2>
+                <p class="col-sm-8 col-sm-offset-2">Lorem ipsum ex vix illud nonummy<br> novum tation et his.At vix scriptaset patrioque scribentur,
+                    at pro fugit erts verterem molestiae, sed et vivendo ali Lorem ipsum ex vix illud nonummy, novum
+                    tation et his. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=" container">
+    <section class="section1">
+        <div class="row">
+            <h2 class="text-capitalize">Some Amazing Features</h2>
+            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio.
+                Morbi nunc odio, gravida at.Cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec
+                accumsan malesuada orci.Donec sit amet erorem ipsum dolor sit amet consectetuer adipiscing elit. Mauris fermentum dictum magna.
+            </p>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="row">
+            <h4 class="col-sm-2">Recent Portfolio</h4>
+
+            <div class="col-sm-5 col-sm-offset-5" >
+                <div style="float:right">
+                    <div class="btn-group " role="group" aria-label="...">
+                            <button type="button" class="btn btn-default">ALL</button>
+                            <button type="button" class="btn btn-default">GATEGORY1</button>
+                            <button type="button" class="btn btn-default">GATEGORY2</button>
+                            <button type="button" class="btn btn-default">GATEGORY3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="section2_bot">
+                <div class="col-sm-3 ">
+                    <div class="thumbnail">
+                        <img src="images/图层%20116.png" alt="...">
+                        <div class="caption">
+                            <h3>Responsive Design</h3>
+                            <p>Quisque euismod orci ut et ..</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="images/图层%20113.png" alt="...">
+                        <div class="caption">
+                            <h3>Responsive Design</h3>
+                            <p>Quisque euismod orci ut et ..</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="images/图层%20115.png" alt="...">
+                        <div class="caption">
+                            <h3>Responsive Design</h3>
+                            <p>Quisque euismod orci ut et ..</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="images/图层%20114.png" alt="...">
+                        <div class="caption">
+                            <h3>Responsive Design</h3>
+                            <p>Quisque euismod orci ut et ..</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+</div>
+
+<div class="section3">
+    <div class="container">
+        <h2>Welcome to our website!</h2>
+        <p>We're experts in this field and we strive to provide high-quality web design, custom development and maintenance.
+            Our goal is to provide unique design,powerful and practical functions, easy operation and user-friendly interface.
+        </p>
+        <a href="#" class="col-sm-2 col-sm-offset-5">Purchase Now</a>
+    </div>
+</div>
+<div class="section4 container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="col-sm-1"><span class=" glyphicon glyphicon-blackboard"></span></div>
+            <div class="col-sm-11">
+                <p>Full Responsive</p>
+                <p>Easy operation and user-friendly interface.</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-1"><span class=" glyphicon glyphicon-heart-empty"></span></div>
+            <div class="col-sm-11">
+                <p>Full Responsive</p>
+                <p>Easy operation and user-friendly interface.</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-1"><span class=" glyphicon glyphicon-user"></span></div>
+            <div class="col-sm-11">
+                <p>Full Responsive</p>
+                <p>Easy operation and user-friendly interface.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section5 container">
+    <div class="row">
+        <div class="col-sm-8"><p>Latest News</p></div>
+        <div class="col-sm-4"><p>Our Service</p></div>
+    </div>
+</div>
+<div class="section6 container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6"><img src="images/图层%20121.png" alt=""></div>
+                        <div class="col-sm-6">
+                            <p>Hello Word!This is my First Post.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-6"><img src="images/图层%20122.png" alt=""></div>
+                        <div class="col-sm-6">
+                            <p>Hello Word!This is my First Post.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6"><img src="images/图层%20123.png" alt=""></div>
+                        <div class="col-sm-6">
+                            <p>Hello Word!This is my First Post.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-6"><img src="images/图层%20124.png" alt=""></div>
+                        <div class="col-sm-6">
+                            <p>Hello Word!This is my First Post.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-4">
+                <p><span>+</span>MANAGEMENT CONSOLTING</p>
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio.
+                    Morbi nunc odio, gravida at.Cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec
+                    accumsan malesuada orci.
+                </p>
+                <div><span>-</span>MANAGEMENT CONSOLTING</div>
+                <div><span>-</span>MANAGEMENT CONSOLTING</div>
+            </div>
+
+        </div>
+
+</div>
+<div class="section7">
+    <div class="container">
+        <div class="row">
+            <h2>Our Team</h2>
+            <p class="col-sm-8 col-sm-offset-2">Lorem ipsum ex vix illud nonummy novum tation et his.At vix scriptaset patrioque scribentur,
+                at pro fugit erts verterem molestiae, sed et vivendo ali Lorem ipsum ex vix illud nonummy, novum
+                tation et his. </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="images/图层%20117.png">
+                <p>Frankie</p>
+            </div>
+            <div class="col-sm-3">
+                <img src="images/图层%20118.png">
+                <p>Elia Erica</p>
+            </div>
+            <div class="col-sm-3">
+                <img src="images/图层%20119.png">
+                <p>Brown Jone</p>
+            </div>
+            <div class="col-sm-3">
+                <img src="images/图层%20120.png">
+                <p>Marh die</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section8">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <img src="images/logo.png" >
+                <p>Copyright 2017 By Awesome</p>
+                <p>Copyright 2017 By Awesome|Privacy Statment|Teams of use</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

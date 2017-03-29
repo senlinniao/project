@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*.inner .con1 .banner{height:455px;width:730px;overflow:hidden;margin:12px 0 0 12px;float:left;}*/
+.inner .con1 .text{float:right;margin:12px 0 0 10px;width:241px;}
+.inner .con1 .text .news{border:1px solid #CFCBCB;height:163px;}
+.inner .con1 .text .news .title{height:32px;line-height:32px;padding:0 15px;border-bottom:1px dotted #CFCBCB;}
+.inner .con1 .text .news .title h3{font-weight:normal;font-size:16px;color:#666;float:left;}
+.inner .con1 .text .news .title a{font-size:12px;float:right;}
+.inner .con1 .text .news .title a:hover{color:#c81623;}
+.inner .con1 .text .news ul{padding:6px 0 0 15px;;}
+.inner .con1 .text .news ul li{height:24px;line-height:24px;width:218px;overflow:hidden;}
+.inner .con1 .text .news ul li a{color:#666;font-size:12px;font-family:"宋体";}
+.inner .con1 .text .news ul li span{font-weight:bold;padding-left:5px;color:#666;font-size:12px;}
+.inner .con1 .text .news ul li a:hover {color:#c81623;}
+.inner .con1 .text .icon{width:244px;height:208px;border:1px solid #D7D5D5;border-top:none;overflow:hidden;}
+.inner .con1 .text .icon ul{width:260px;}
+.inner .con1 .text .icon li{width:62px;height:70px;float:left;border-right:1px solid #D7D5D5;border-bottom:1px solid #D7D5D5;text-align:center;position:relative;}
+.inner .con1 .text .icon li:hover a{color:#c81623}
+.inner .con1 .text .icon li span{font-size:12px;font-family:"宋体";color:#666;padding-top:50px;display:block;}
+.inner .con1 .text .icon li i{height:25px;width:25px;background:url(../images/57620a6fN77b2b8af.png) no-repeat;display:inline-block;position:absolute;left:18px;top:13px;}
+.inner .con1 .text .icon li .er{background-position:0px -25px;}
+.inner .con1 .text .icon li .san{background-position:0px -50px;}
+.inner .con1 .text .icon li .si{background-position:0px -75px;}
+.inner .con1 .text .icon li .wu{background-position:0px -100px;}
+.inner .con1 .text .icon li .liu{background-position:0px -125px;}
+.inner .con1 .text .icon li .qi{background-position:0px -150px;}
+.inner .con1 .text .icon li .ba{background-position:0px -175px;}
+.inner .con1 .text .icon li .jiu{background-position:0px -200px;}
+.inner .con1 .text .icon li .shi{background-position:0px -225px;}
+.inner .con1 .text .icon li .syi{background-position:0px -250px;}
+.inner .con1 .text .icon li .ser{background-position:0px -275px;}
+.inner .con1 .text  .pic{overflow:hidden;height:75px;margin-top:5px;}

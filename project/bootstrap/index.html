@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+
+    <style>
+        body{font-family:arial}
+        a:hover{text-decoration: none;}
+        a:focus{text-decoration:none}
+        @font-face {
+            font-family: 'Niconne-Regular';
+            src: url(fonts/Niconne-Regular.ttf)format('truetype');
+        }
+        .header_top{background:#84939a;}
+        .header_top p,.header_top span{font-size:16px;height:30px;line-height:30px;color: #fff;}
+        .header_top .col-sm-8 a{color: #fff; }
+        .header_top .col-sm-4 a{font-size:16px;height:30px;line-height:30px;color: #fff;}
+
+        .header_bottom .h_nav div a{color:#cc7421;text-align:center;font-size:18px;display:block;padding:30px 22px ;position:relative}
+
+        .header_bottom .logo:before {
+            content: '';
+            position: absolute;
+            left: -31%;
+            bottom: -50px;
+            border-left: 112px solid rgba(0, 0, 0, 0);
+            border-right: 111px solid rgba(0, 0, 0, 0);
+            border-top: 53px solid #fff;
+            z-index: 2;}
+        .header_bottom .logo a{color:#cc7421;font-size:60px;font-family:'Niconne-Regular';font-weight:bold;}
+        .header_bottom .h_icon a{width:26px;height:26px;display:block;margin-top:30px;}
+        .header_bottom .h_icon  .f1{background:url(images/img-sprite-hover.png) no-repeat 0px 0px;transition:all 0.4s;}
+        .header_bottom .h_icon  .f2{background:url(images/img-sprite-hover.png) no-repeat -26px 0px;transition:all 0.4s;}
+        .header_bottom .h_icon  .f3{background:url(images/img-sprite-hover.png) no-repeat -52px 0px;transition:all 0.4s;}
+        .header_bottom .h_icon  .f4{background:url(images/img-sprite-hover.png) no-repeat -78px 0px;transition:all 0.4s;}
+        .header_bottom .h_icon  .f1:hover{background:url(images/img-sprite.png) no-repeat 0px 0px;transform:rotateY(360deg)}
+        .header_bottom .h_icon  .f2:hover{background:url(images/img-sprite.png) no-repeat -26px 0px;transform:rotateY(360deg)}
+        .header_bottom .h_icon  .f3:hover{background:url(images/img-sprite.png) no-repeat -52px 0px;transform:rotateY(360deg)}
+        .header_bottom .h_icon  .f4:hover{background:url(images/img-sprite.png) no-repeat -78px 0px;transform:rotateY(360deg)}
+
+        .banner{background:url(images/banner.jpg) no-repeat 0px 0px/cover;min-height:730px;}
+        .banner h3{color:#fff;font-size:36px;text-align:center;font-weight:600;margin-top:120px;}
+        .banner h4{font-family:'Niconne-Regular';color:#8EC358;font-size:75px;margin:50px 0 0 0;text-align:center;}
+
+        .section1 h3{font-family:'Niconne-Regular';text-align:center;font-size:52px;color:#cc7421;margin-bottom:50px;}
+        .section1 h3:after,.section1 h3:before{
+            width: 120px;
+            height: 1px;
+            display: inline-block;
+            vertical-align: middle;
+            content: "";
+            background: #000;
+            margin: 0 2%;
+        }
+        .section1 p{font-size:14px;text-align:center;color:#464646;line-height:2em;margin-bottom:35px;}
+
+        .section2{margin-bottom:50px;}
+        .section2 video{width:100%;height:100%}
+        .section2 h4{font-size:28px;color:#8EC358;font-weight:600;}
+        .section2 p{color:#464646;font-size:16px;line-height:2em;margin:20px 0;}
+
+        .section3{min-height:590px;background:url(images/banner4.jpg) no-repeat 0px 0px/cover;}
+        .section3 h2,.section4 h2, .section5 .row h3,.section6 .row h3{font-family:'Niconne-Regular';text-align:center;font-size:52px;color:#cc7421;margin:50px 0 80px 0;}
+        .section3 h2:after,.section3 h2:before {
+            width: 120px;
+            height: 1px;
+            display: inline-block;
+            vertical-align: middle;
+            content: "";
+            background: #fff;
+            margin: 0 2%;
+        }
+        .section3 .row:nth-child(2){margin-bottom:50px}
+        .section3 .circle{transition:all 0.4s;background: rgba(255,255,255,0.1);font-size:28px;display:inline-block;cursor:pointer;width:80px;height:80px;border-radius:50%;text-align:center;position:relative;z-index:2;color:#fff;border:3px solid #cc7421;line-height:80px;}
+        .section3 .circle:hover{transform:scale(0.9);background:rgba(255,255,255,0.05);opacity: 1  }
+        .section3  .col-sm-9 h4{font-size:22px;color:#8EC358;font-weight:600;}
+        .section3  .col-sm-9 p{margin:12px 0 0 0;font-size:16px;color:#fff;line-height:28px;}
+
+
+        .section4 h2:after,.section4 h2:before{
+            width: 120px;
+            height: 1px;
+            display: inline-block;
+            vertical-align: middle;
+            content: "";
+            background: #000;
+            margin: 0 2%;}
+        .section4 img{width:100%;transition:all 0.4s}
+        .section4 img:hover{transform:translateY(-10px);box-shadow:10px 15px 15px 0 rgba(38, 38, 38, 0.8)  }
+
+        .section5{background:#8EC358;min-height:520px;}
+
+        .section5 h3:after,.section5 h3:before {
+            width: 120px;
+            height: 1px;
+            display: inline-block;
+            vertical-align: middle;
+            content: "";
+            background: #000;
+            margin: 0 2%;
+        }
+        .section5 img{transition:all 0.6s;}
+        .section5 img:hover{transform:rotateY(360deg);}
+        .section5 p{color:#fff;text-align:center;font-size:30px;margin-top:30px;}
+
+        .section6 h3:after,.section6 h3:before {
+            width: 120px;
+            height: 1px;
+            display: inline-block;
+            vertical-align: middle;
+            content: "";
+            background: #000;
+            margin: 0 2%;
+        }
+        .section6 h4{color:#cc7421;font-size:22px;font-weight:600;}
+        .section6 p{line-height:30px;font-size:18px;}
+
+        .section7{min-height:80px;background:#84939a;margin-top:30px;text-align:center;color:#fff;}
+        .section7 p{font-size:16px;margin-top:40px;}
+
+        @media(max-width:992px) {
+            .header_bottom .logo a {
+                float: left;
+                font-size: 45px;
+            }
+
+            .header_bottom .h_nav {
+                float: right;
+                left: -30%;
+                width: 50%;
+            }
+
+            .header_bottom .h_icon {
+                position: absolute;
+                top: -20px;
+                left: 490px;
+            }
+
+            .header_top .row .col-sm-5 {
+                display: none;
+            }
+
+            .header_top {
+                position: relative;
+                background: #ffda60
+            }
+        }
+        @media (max-width:768px){
+            .header_bottom .h_icon {
+                position: absolute;
+                top: 60px;
+                left: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header_top">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <p><span class="glyphicon glyphicon-earphone"></span>Phone:+128-546-6853</p>
+            </div>
+            <div class="col-sm-5 col-sm-offset-4">
+                <div class="col-sm-8" style="padding:0">
+                    <p class="col-sm-offset-5" style="color:#fff;"><a href="#"><span class="glyphicon glyphicon-envelope"></span></a>info@example.com</p>
+                </div>
+                <div class="col-sm-4" style="padding:0">  <a href="#">Contact</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header_bottom">
+    <div class="container">
+        <div class="row">
+            <div class="h_nav  col-md-5">
+                <div class=" col-md-3">
+                    <div class="bg"></div>
+                    <a href="#About">About</a>
+                </div>
+                <div class=" col-md-3"><a href="#Gallery">Gallery</a></div>
+                <div class="col-md-3"><a href="#Services">Services</a></div>
+                <div class=" col-md-3"><a href="#Team">Team</a></div>
+
+            </div>
+            <div class="logo col-sm-2"><a href="#">Corax</a></div>
+            <div class="h_icon col-sm-5">
+                <div class="col-sm-offset-6">
+                    <div class="col-sm-1"><a href="#" class="f1"></a></div>
+                    <div class="col-sm-1"><a href="#" class="f2"></a></div>
+                    <div class="col-sm-1"><a href="#" class="f3"></a></div>
+                    <div class="col-sm-1"><a href="#" class="f4"></a></div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <h3>WELCOME</h3>
+            <h4>We are professional and more competitive in our service.</h4>
+        </div>
+    </div>
+</div>
+
+<div class="section1 container" >
+    <div class="row" id="About">
+        <h3>About</h3>
+        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque
+            nihil impedit quo minus id quod maxime placeat facere possimus,
+            omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
+            autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat facere.</p>
+    </div>
+</div>
+<div class="section2 container">
+    <div class="row">
+        <div class="col-sm-6">
+            <video autoplay="autoplay" loop="loop">
+                <source src="media/WebVid.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-sm-6">
+            <h4>Temporibus autem quibusdam</h4>
+            <p>Voluptas assumenda est, omnis dolor repellendus.
+                Temporibus autem quibusdam et aut officiis debitis aut
+                rerum necessitatibus saepe.Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                nihil impedit quo minus id quod maxime placeat facere possimus,
+                omnis voluptas assumenda est, omnis dolor repellendus.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section3">
+    <div class="container">
+        <div class="row" id="Services">
+            <h2>Services</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="col-sm-3">
+                    <a href="#" >
+                        <span class="circle  glyphicon glyphicon-user"></span>
+                    </a>
+                </div>
+                <div class="col-sm-9">
+                    <h4>Ut wisi enim ad</h4>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                        It has roots in a piece of classical.Contrary to popular belief, Lorem Ipsum
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-sm-3">
+                    <a href="#" >
+                        <span class="circle   glyphicon glyphicon-pencil"></span>
+                    </a>
+                </div>
+                <div class="col-sm-9">
+                    <h4>Voluptas assumen</h4>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                        It has roots in a piece of classical.Contrary to popular belief, Lorem Ipsum
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="col-sm-3">
+                    <a href="#" >
+                        <span class="circle  glyphicon glyphicon-cog"></span>
+                    </a>
+                </div>
+                <div class="col-sm-9">
+                    <h4>Repellendus rerum</h4>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                        It has roots in a piece of classical.Contrary to popular belief, Lorem Ipsum
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-sm-3">
+                    <a href="#" >
+                        <span class="circle glyphicon glyphicon-map-marker"></span>
+                    </a>
+                </div>
+                <div class="col-sm-9">
+                    <h4>Necessitatibus sap</h4>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                        It has roots in a piece of classical.Contrary to popular belief, Lorem Ipsum
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section4 container">
+    <div class="row" id="Gallery">
+        <h2>Gallery</h2>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g1.jpg"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g2.jpg"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g3.jpg"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g4.jpg"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g5.jpg"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g6.jpg"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g7.jpg"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g8.jpg"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#"  class="thumbnail"><img src="images/g5.jpg"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section5">
+    <div class="container">
+        <div class="row" id="Team">
+            <h3>Our Team</h3>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="img"><img src="images/16.jpg"  class="img-circle"></div>
+                <p>Frankie</p>
+
+            </div>
+            <div class="col-sm-3">
+                <div class="img"><img src="images/17.jpg"  class="img-circle"></div>
+                <p>Marh die</p>
+
+            </div>
+            <div class="col-sm-3">
+                <div class="img"><img src="images/18.jpg"  class="img-circle"></div>
+                <p>Brown Jone</p>
+
+            </div>
+            <div class="col-sm-3">
+                <div class="img"><img src="images/19.jpg"  class="img-circle"></div>
+                <p>Elia Erica</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section6 container">
+    <div class="row">
+        <h3>Contact</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <h4>Contact Form</h4>
+            <form class="form-inline " >
+                <div class="row">
+                    <label class="sr-only">Name</label>
+                    <input type="text" class="form-control " placeholder="Name">
+                    <label class="sr-only">Email</label>
+                    <input type="email" class="form-control"  placeholder="Email">
+                    <label class="sr-only">Telephone</label>
+                    <input type="text" class="form-control"  placeholder="Telephone">
+                    <textarea name="text"  cols="82" rows="10" style="margin-top:30px;resize:none;"></textarea>
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <h4>ADDRESS</h4>
+            <p>Diamond street,</p>
+            <p>260-14 City, Country</p>
+            <p>+62 000-0000-00</p>
+            <p>Phone : +1 078 4589 2456</p>
+        </div>
+    </div>
+</div>
+
+<div class="section7">
+    <div class="container">
+        <div class="row">
+            <p>Copyright 2017 By Awesome Phone : +1 078 4589 2456</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

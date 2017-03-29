@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+.main{width:1110px;margin:0 auto;height:1970px;}
+.main-top{height:798px;padding-top:42px;}
+.main-top .t-left{width:855px;float:left;position:relative;}
+.main-top .t-left .yi{height:22px;line-height:22px;text-transform:uppercase;font-size:18px;font-family:Arial;}
+.main-top .t-left .er{height:45px;line-height:45px;font-size:12px;color:#b0b0b0;}
+.main-top .t-left .pic{width:812px;height:425px;border:6px solid #ed5844;}
+.main-top .t-left .pic img{width:812px;height:425px;}
+.main-top .t-left .pic2{width:87px;height:41px;position:absolute;right:41px;bottom:310px;}
+.main-top .t-left .pic2 .icon1{width:42px;height:42px;float:left;background:url(../images/s-icons.png) no-repeat -242px -122px;}
+.main-top .t-left .pic2 .icon2{width:42px;height:42px;float:right;padding-left:3px;background:url(../images/s-icons.png) no-repeat -291px -122;}
+.main-top .t-left .san{line-height:40px;text-transform:uppercase;font-size:18px;font-family:Arial;}
+.main-top .t-left .si{line-height:23px;fonf-size:12px;color:#b0b0b0;}
+
+
+.main-middle{height:520px;}
+.main-middle h2{height:40px;line-height:40px;font:24px/40px Arial;color:#262827;}
+.main-middle .box{padding-left:8px;}
+.main-middle h3{font-size:14px;color:#202020;height:21px;line-height:21px;padding-top:19px;}
+.main-middle .name{padding-top:7px;}
+.main-middle input{height:40px;width:810px;background:#eeeeee;}
+.main-middle textarea{height:150px;width:810px;resize:none;background:#eeeeee;}
+.main-middle .last{padding-top:16px;}
+.main-middle .send{height:50px;width:145px;background:url(../images/send_03.jpg) no-repeat;}
+
+.main-bottom{height:620px;}
+.main-bottom h2{height:60px;line-height:60px;font:24px/40px Arial;color:#262827;padding-top:35px;}
+.main-bottom .news{height:200px;width:810px;border:1px solid #d4d4d4;margin-bottom:42px;}
+.main-bottom .news .photo{height:158px;width:158px;padding:18px 0 0 15px;float:left;}
+.main-bottom .news .photo img{height:158px;width:158px;}
+.main-bottom .news .n-right{width:604px;float:right;}
+.main-bottom .news .n-right h4{height:20px;line-height:20px;font-size:14px;color:#202020;padding-top:15px;}
+.main-bottom .news .n-right .viavamus{line-height:23px;font-size:12px;color:#b0b0b0;}
+.main-bottom .news .n-right .l-reply{margin:4px 97px 0 0;float:right;}
+.main-bottom .news .n-right .reply{height:43px;width:99px;background:url(../images/reply_07.jpg) no-repeat;}
+.main-bottom .news .n-right .on{font-size:14px;color:#c6c6c6;padding-top:18px;}
+
+
+
+
+
+
+
+
+
+
+.main-top .t-right{width:257px;float:right;}

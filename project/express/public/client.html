@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东商场</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7-dist/css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function () {
+            // 和socket服务器建立连接，获得客户端的socket对象
+            // 连接服务器。这将从被加载的页面向服务器发送连接请求，
+            // 最终在服务器端socketio中触发connection事件
+            var clientSocket = io();
+
+            // 事件委托：监听用户对咨询问题列表的单击
+            $("#messages").on("click","a.qs",function () {
+                clientSocket.send($(this).text());
+            });
+
+            // 客户端socket监听服务器发过来的消息
+            clientSocket.on("message", function (data) {
+                // 提取消息类型
+                var type = data.type;
+
+                // 根据不同的消息类型分别处理
+                switch (type){
+                    case "qs":  // 说明发过来的是初始咨询问题列表
+                        // 提取内容
+                        var questions = data.qs;
+
+                        // 在咨询窗口显示咨询问题列表
+                        var content = "请选择您要咨询的业务:";
+                        $("#messages").append(content);
+                        // 动态构建咨询问题列表
+                        var $ul = $("<ul>");
+                        $.each(questions,function (index,q) {
+                            var c = "<li><a href='#' class='qs'>" + q + "</a></li>";
+                            $ul.append(c);
+                        });
+                        $("#messages").append($ul);
+                        break;
+                    case "as":  // 说明是发过来的应答内容
+                        var as = $("<div>").append(data.as);
+                        // 在咨询窗口客服应答内容
+                        $("#messages").append(as);
+                        break;
+                }
+
+                // 窗口自动向下滚动
+                $("#messages").scrollTop($("#messages").prop("scrollHeight"));
+            });
+
+            // 发送咨询内容
+            $("#send").on("click", function () {
+                // 获取用户输入的咨询内容
+                var content = $("#message").val();
+                // ......
+                // 敏感词过滤
+
+                // 构造要发送的信息的数据结构
+//                var msg = { qs: content };
+                // 将咨询的问题发给服务器端
+                clientSocket.send(content);
+
+                // 将咨询内容追加到界面上
+                $('#messages').append("<div>" + content + "</div>");
+                // 窗口自动向下滚动
+                $("#messages").scrollTop($("#messages").prop("scrollHeight"));
+                $("#message").val(null);    // 清空输入框
+            });
+
+            // 当按下Enter键时，触发send按钮的click事件
+            $('#message').keydown(function (e) {
+                if (e.keyCode == 13) {  // 如果是按下的Enter键
+                    //模拟点击send按钮，触发上面的 Click 事件
+                    $("#send").click();
+                }
+            });
+
+            //---------------------表情显示----------------------
+            var timer8;
+
+            $('#face').on('mouseenter',function(){
+                $('#faces_box').show();
+            });
+            timer8=setTimeout(function(){
+
+                $('#face').on('mouseleave',function(){
+                    $('#faces_box').hide();
+
+                })
+            },2000);
+            $('#faces_box').on('mouseenter',function(){
+                clearTimeout(timer8);
+            }).on("click",function(){
+                $(this).hide()
+            })
+//---------------------------------评分-----------------------
+         /*   var timer9;
+            $('#score1').on('mouseenter',function(){
+                $('#score').show();
+
+            });
+            timer9=setTimeout(function(){
+                $('#score1').on('mouseleave',function(){
+                    $('#score').hide()
+                })
+            },3000);
+            $('#score').on('mouseenter',function(){
+                clearTimeout(timer9);
+                // 缓存dom对象
+                var box = $("#score div.box");
+
+                // 事件绑定
+                box.on("mouseover",function(){
+                    // 先重置所有的div
+                    box.css({"backgroundColor":"","borderColor":""});
+
+                    // 保存当前鼠标指向的对象
+                    var currentDiv = $(this);
+
+                    // 然后遍历到当前鼠标移入的div，设置颜色
+                    box.each(function(index){
+                        // 改变当前box的颜色
+                        $(this).css({"backgroundColor":"red","border-color":"orange"});
+                        // 如果当前的box就是鼠标移入的box，则遍历结束
+                        if($(this).is(currentDiv)){
+                            return false;   // return false会终止遍历
+                        }
+                    });
+                }).on('click',function(){
+                    $(this).hide();
+                });
+            })*/
+
+
+        });
+
+
+    </script>
+    <style>
+        *{maring:0;padding:0;}
+        a{text-decoration:none;}
+        #faces_box{display:none;border-radius:6px;position:absolute;z-index:999;background: #fefefe;width:360px;height:200px;bckground: #f8f8f8;border:1px solid #c6c6c6;box-shadow:4px 1px 9px -3px #888888;padding:10px;}
+       #faces_box ul{list-style: none;overflow: hidden;border-top:1px solid #ccc;border-left:1px solid #ccc;width:307px;}
+
+        #faces_box ul li{float:left;border-right:1px solid #ccc;border-bottom:1px solid #ccc;height:35px;width:35px;padding:4px 2px;text-align:center;margin:-1px 0 0 -1px;}
+        div> a:hover{color: #3d98d2;  }
+        #score{display:none;border-radius:6px;position:absolute;z-index:9999;background: #fefefe;width:360px;height:200px;bckground: #f8f8f8;border:1px solid #c6c6c6;box-shadow:4px 1px 9px -3px #888888;padding:10px; }
+        #score .box {
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            float: left;
+            border: 2px gray solid;
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/"><img src="images/jd.gif" width="100"/></a>
+</div>
+
+<div class="bg-info">
+    <div class="container">
+        <nav class="navbar navbar-default <!--navbar-fixed-top-->" role="navigation">
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="title text-center">京东在线客服系统</h3>
+    <div class="panel panel-info">
+        <div class="panel-heading">正在和客服通话......</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="messages"></div>
+
+                </div>
+
+            </div>
+            <div class="middle" style="height:30px;background:#d9edf7">
+                <a href="javascript;" id="face" style="margin-left:20px;color:#999;height:30px;line-height:30px;">表情</a>
+                <a href="javascript;" id="score1"style="margin-right:500px;color:#999;height:30px;line-height:30px;margin-left:50px;">满意度评价</a>
+                <div id="faces_box">
+                    <h6>常用表情</h6>
+                    <ul>
+                        <li><a href="javascript:;"> <img src="img/emo_01.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_02.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_03.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_04.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_05.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_06.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_07.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_08.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_09.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_10.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_11.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_12.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_13.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_15.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_16.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_17.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_18.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_19.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_20.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_21.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_22.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_23.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_24.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_25.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_26.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_27.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_28.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_29.gif" /></a></li>
+                        <li><a href="javascript:;"><img src="img/emo_30.gif" /></a></li>
+                    </ul>
+
+                </div>
+                <div id="score">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+
+
+            </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-11">
+                    <textarea  id="message" class="form-control" style="resize:none;height:80px;"></textarea>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-info" id="send">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
